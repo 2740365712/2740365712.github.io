@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>梦里徜徉</title>
+  
+  <subtitle>梦里徜徉的小站</subtitle>
+  <link href="https://hjy2005.xyz/atom.xml" rel="self"/>
+  
+  <link href="https://hjy2005.xyz/"/>
+  <updated>2020-08-13T03:37:10.532Z</updated>
+  <id>https://hjy2005.xyz/</id>
+  
+  <author>
+    <name>梦里徜徉</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CF34B 题解</title>
+    <link href="https://hjy2005.xyz/2020/08/13/cf34b-ti-jie/"/>
+    <id>https://hjy2005.xyz/2020/08/13/cf34b-ti-jie/</id>
+    <published>2020-08-13T01:51:35.000Z</published>
+    <updated>2020-08-13T03:37:10.532Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;原题链接：&lt;a href=&quot;http://codeforces.com/problemset/problem/34/B&quot;&gt;http://codeforces.com/problemset/problem/34/B&lt;/a&gt;&lt;br&gt;洛谷RemoteJudge链接：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="OI" scheme="https://hjy2005.xyz/tags/OI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>洛谷P1216-数字三角形-题解</title>
+    <link href="https://hjy2005.xyz/2020/08/13/luogu-p1216-shuzisanjiaoxing-tijie/"/>
+    <id>https://hjy2005.xyz/2020/08/13/luogu-p1216-shuzisanjiaoxing-tijie/</id>
+    <published>2020-08-13T01:30:00.000Z</published>
+    <updated>2020-08-13T02:01:36.142Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;写题解是个好习惯，也不失为一个充实博客的好办法😏。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="OI" scheme="https://hjy2005.xyz/tags/OI/"/>
+    
+    <category term="记忆化搜索" scheme="https://hjy2005.xyz/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/"/>
+    
+  </entry>
+  
+</feed>
