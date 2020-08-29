@@ -6,7 +6,7 @@
   <link href="https://hjy2005.xyz/atom.xml" rel="self"/>
   
   <link href="https://hjy2005.xyz/"/>
-  <updated>2020-08-13T03:37:10.532Z</updated>
+  <updated>2020-08-29T08:35:19.011Z</updated>
   <id>https://hjy2005.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>洛谷P1351-联合权值题解</title>
+    <link href="https://hjy2005.xyz/2020/08/29/luo-gu-p1351-lian-he-quan-zhi-ti-jie/"/>
+    <id>https://hjy2005.xyz/2020/08/29/luo-gu-p1351-lian-he-quan-zhi-ti-jie/</id>
+    <published>2020-08-29T08:30:50.000Z</published>
+    <updated>2020-08-29T08:35:19.011Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是一个本题的奇葩解法。&lt;br&gt;题目链接：&lt;a href=&quot;https://www.luogu.com.cn/problem/P1351&quot; target=&quot;_blank&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="OI" scheme="https://hjy2005.xyz/tags/OI/"/>
+    
+  </entry>
   
   <entry>
     <title>CF34B 题解</title>
