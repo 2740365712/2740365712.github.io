@@ -105,7 +105,9 @@ $(function () {
             // 启用字幕
             subHtmlSelectorRelative: true
         });
-
+        $(document).find('img[data-original]').each(function(){
+            $(this).parent().attr("href", $(this).attr("data-original"));
+        });//图片懒加载支持
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
         if (progressElement) {
