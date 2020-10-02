@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="暂别, C++,CPP,OI,IT,Blog">
+    <meta name="keywords" content="洛谷P1983-车站分级 题解, C++,CPP,OI,IT,Blog">
     <meta name="description" content="记录信息学、技术折腾还有文化课学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>暂别 | 梦里徜徉</title>
+    <title>洛谷P1983-车站分级 题解 | 梦里徜徉</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -225,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">暂别</h1>
+                    <h1 class="description center-align post-title">洛谷P1983-车站分级 题解</h1>
                 </div>
             </div>
         </div>
@@ -345,12 +345,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%9A%B4%E5%8A%9B/">
+                                <span class="chip bg-color">暴力</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/OI/" class="post-category">
+                                OI
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -359,7 +372,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-05
+                    2020-10-02
                 </div>
                 
 
@@ -368,14 +381,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    193
+                    649
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -385,7 +398,52 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>博主进入初三了，接下来的一段时间可能会没多少时间写博客。<br>为OIer，以计算机为挚友，以算法为利刃，赛场厮杀；<br>为WHKer，全身心投入新课学习，不浪费时间，中考见真章！<br>（博主文采不好，勿怪，勿怪）<br>总之，希望能在CSP2020-J取得好成绩，而不是默默退役；希望能在自主招生展现自我，在高中继续投入信息学竞赛；希望能在中考考出风采，得胜而归！<br>另，该域名将于2021年6月左右过期，如果明年寒假或者说3月再想想是干脆用着就用二级域名还是用免费域名，不过近几天在freenom又注册失败了，害。</p>
+                <p>题目链接：<a href="https://www.luogu.com.cn/problem/P1983" target="_blank" rel="noopener">https://www.luogu.com.cn/problem/P1983</a><br>思路来源：<a href="https://www.luogu.com.cn/blog/WT666-666/solution-p1983" target="_blank" rel="noopener">https://www.luogu.com.cn/blog/WT666-666/solution-p1983</a><br>虽然这位dalao的题解里留了不少坑（幸好我没抄），但是他的思路给了我很大启发。</p>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>在完成输入后，我们可以掌握某辆车停靠和不停靠的车站。由于车站最低级别为1，所以说要把初始级别设为1，这样之后我们算出来车站的最高级别就会是车站分出来的级别。</p>
+<p>那么怎么来推算每个车站的级别呢？<br>假设停靠的站点为1，不停靠的站点为0，当一辆车的情况是这样的时候：<code>1 0 0 0 1</code> 那么外面两个车站的等级显然是高于中间三个的，否则的话就全都要停靠了。<br>所以说我们就可以从不停靠的车站入手，将停靠的车站的等级改为不停靠的车站的最高等级+1，使其符合条件。  </p>
+<p>现在你可以先试着自己写下代码了，如果有问题再往下看。</p>
+<h3 id="代码（含注释）"><a href="#代码（含注释）" class="headerlink" title="代码（含注释）"></a>代码（含注释）</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> lv<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">,</span>tot<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">,</span>train<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">,</span>stop<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//车站的级别 某一辆车停靠的站点数 某辆车的某个站点的编号 某辆车是否停靠某个站点</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token operator">&amp;</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> lv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//每个车站的最低等级为1</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> s<span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tot<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>s<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            stop<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">bool</span> finish<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>finish<span class="token operator">==</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//cout&lt;&lt;"ok"&lt;&lt;endl;</span>
+        finish<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//cout&lt;&lt;"ok2"&lt;&lt;endl;</span>
+            <span class="token keyword">int</span> _max<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>tot<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//cout&lt;&lt;"ok3"&lt;&lt;endl;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>stop<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> _max<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>_max<span class="token punctuation">,</span>lv<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//找出不停靠的车站的最大级别</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>tot<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//题目中提到：如果这趟车次停靠了火车站x，</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>lv<span class="token punctuation">[</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>_max<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//则始发站、终点站之间所有级别大于等于火车站x的都必须停靠。</span>
+                    lv<span class="token punctuation">[</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>_max<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>finish<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//所以反过来，如果某个站停靠了，那么它至少也要比没停靠的站中的最大值大。</span>
+                    <span class="token comment" spellcheck="true">//cout&lt;&lt;"lv changed"&lt;&lt;" "&lt;&lt;_max&lt;&lt;endl;</span>
+                <span class="token punctuation">}</span><span class="token comment" spellcheck="true">//当有一个站被修改了 就证明这个过程没完成</span>
+            <span class="token punctuation">}</span>
+            _max<span class="token operator">+</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> _max<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> _max<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>_max<span class="token punctuation">,</span>lv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>_max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -411,7 +469,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hjy2005.xyz/2020/09/05/zan-bie/">https://hjy2005.xyz/2020/09/05/zan-bie/</a>
+                    <a href="https://hjy2005.xyz/2020/10/02/luo-gu-p1983-che-zhan-fen-ji-ti-jie/">https://hjy2005.xyz/2020/10/02/luo-gu-p1983-che-zhan-fen-ji-ti-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -448,7 +506,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%9A%B4%E5%8A%9B/">
+                                    <span class="chip bg-color">暴力</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -488,9 +550,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/10/02/luo-gu-p1983-che-zhan-fen-ji-ti-jie/">
                     <div class="card-image">
@@ -508,9 +571,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -523,6 +586,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -541,33 +605,29 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/29/luo-gu-p1351-lian-he-quan-zhi-ti-jie/">
+                <a href="/2020/09/05/zan-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="洛谷P1351-联合权值题解">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="暂别">
                         
-                        <span class="card-title">洛谷P1351-联合权值题解</span>
+                        <span class="card-title">暂别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是一个本题的奇葩解法。
+                            博主进入初三了，接下来的一段时间可能会没多少时间写博客。为OIer，以计算机为挚友，以算法为利刃，赛场厮杀；为WHKer，全身心投入新课学习，不浪费时间，中考见真章！（博主文采不好，勿怪，勿怪）总之，希望能在CSP2020-J取得好成绩，而
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-05
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/OI/" class="post-category">
-                                    OI
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            梦里徜徉
                             
                         </span>
                     </div>

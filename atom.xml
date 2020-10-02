@@ -6,7 +6,7 @@
   <link href="https://hjy2005.xyz/atom.xml" rel="self"/>
   
   <link href="https://hjy2005.xyz/"/>
-  <updated>2020-09-05T13:19:33.525Z</updated>
+  <updated>2020-10-02T00:20:26.910Z</updated>
   <id>https://hjy2005.xyz/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>洛谷P1983-车站分级 题解</title>
+    <link href="https://hjy2005.xyz/2020/10/02/luo-gu-p1983-che-zhan-fen-ji-ti-jie/"/>
+    <id>https://hjy2005.xyz/2020/10/02/luo-gu-p1983-che-zhan-fen-ji-ti-jie/</id>
+    <published>2020-10-02T00:03:37.000Z</published>
+    <updated>2020-10-02T00:20:26.910Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;题目链接：&lt;a href=&quot;https://www.luogu.com.cn/problem/P1983&quot; target=&quot;_blank&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="OI" scheme="https://hjy2005.xyz/categories/OI/"/>
+    
+    
+    <category term="暴力" scheme="https://hjy2005.xyz/tags/%E6%9A%B4%E5%8A%9B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>暂别</title>
     <link href="https://hjy2005.xyz/2020/09/05/zan-bie/"/>
     <id>https://hjy2005.xyz/2020/09/05/zan-bie/</id>
     <published>2020-09-05T13:09:07.000Z</published>
-    <updated>2020-09-05T13:19:33.525Z</updated>
+    <updated>2020-10-02T00:20:25.871Z</updated>
     
     
       
@@ -42,7 +67,7 @@
     <link href="https://hjy2005.xyz/2020/08/29/luo-gu-p1351-lian-he-quan-zhi-ti-jie/"/>
     <id>https://hjy2005.xyz/2020/08/29/luo-gu-p1351-lian-he-quan-zhi-ti-jie/</id>
     <published>2020-08-29T08:30:50.000Z</published>
-    <updated>2020-08-29T08:35:19.011Z</updated>
+    <updated>2020-10-02T00:20:27.752Z</updated>
     
     
       
@@ -55,8 +80,8 @@
     
     
     
+    <category term="OI" scheme="https://hjy2005.xyz/categories/OI/"/>
     
-    <category term="OI" scheme="https://hjy2005.xyz/tags/OI/"/>
     
   </entry>
   
@@ -65,7 +90,7 @@
     <link href="https://hjy2005.xyz/2020/08/13/cf34b-ti-jie/"/>
     <id>https://hjy2005.xyz/2020/08/13/cf34b-ti-jie/</id>
     <published>2020-08-13T01:51:35.000Z</published>
-    <updated>2020-08-13T03:37:10.532Z</updated>
+    <updated>2020-10-02T00:20:29.084Z</updated>
     
     
       
@@ -78,8 +103,10 @@
     
     
     
+    <category term="OI" scheme="https://hjy2005.xyz/categories/OI/"/>
     
-    <category term="OI" scheme="https://hjy2005.xyz/tags/OI/"/>
+    
+    <category term="Codeforces" scheme="https://hjy2005.xyz/tags/Codeforces/"/>
     
   </entry>
   
@@ -88,15 +115,15 @@
     <link href="https://hjy2005.xyz/2020/08/13/luogu-p1216-shuzisanjiaoxing-tijie/"/>
     <id>https://hjy2005.xyz/2020/08/13/luogu-p1216-shuzisanjiaoxing-tijie/</id>
     <published>2020-08-13T01:30:00.000Z</published>
-    <updated>2020-08-13T02:01:36.142Z</updated>
+    <updated>2020-10-02T00:20:28.354Z</updated>
     
     
     <summary type="html">&lt;p&gt;写题解是个好习惯，也不失为一个充实博客的好办法😏。&lt;/p&gt;</summary>
     
     
     
+    <category term="OI" scheme="https://hjy2005.xyz/categories/OI/"/>
     
-    <category term="OI" scheme="https://hjy2005.xyz/tags/OI/"/>
     
     <category term="记忆化搜索" scheme="https://hjy2005.xyz/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/"/>
     
