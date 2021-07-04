@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="暂别, C++,CPP,OI,IT,Blog">
+    <meta name="keywords" content="UVA10696 f91 题解, C++,CPP,OI,IT,Blog">
     <meta name="description" content="记录信息学、技术折腾还有文化课学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>暂别 | 梦里徜徉</title>
+    <title>UVA10696 f91 题解 | 梦里徜徉</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -227,12 +227,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">暂别</h1>
+                    <h1 class="description center-align post-title">UVA10696 f91 题解</h1>
                 </div>
             </div>
         </div>
@@ -346,12 +346,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/UVA/">
+                                <span class="chip bg-color">UVA</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/OI/" class="post-category">
+                                OI
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -360,7 +373,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-05
+                    2021-07-04
                 </div>
                 
 
@@ -369,7 +382,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    245
+                    402
                 </div>
                 
 
@@ -399,7 +412,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>博主进入初三了，接下来的一段时间可能会没多少时间写博客。<br>为OIer，以计算机为挚友，以算法为利刃，赛场厮杀；<br>为WHKer，全身心投入新课学习，不浪费时间，中考见真章！<br>（博主文采不好，勿怪，勿怪）<br>总之，希望能在CSP2020-J取得好成绩，而不是默默退役；希望能在自主招生展现自我，在高中继续投入信息学竞赛；希望能在中考考出风采，得胜而归！<br>另，该域名将于2021年6月左右过期，如果明年寒假或者说3月再想想是干脆用着就用二级域名还是用免费域名，不过近几天在freenom又注册失败了，害。</p>
+                <p>看到<a href="https://www.luogu.com.cn/problem/solution/UVA10696" target="_blank" rel="noopener">洛谷题解上的大佬</a>找出了这个函数的规律，不过我做这道题的时候并没有想那么多。这题直接按题意写递归函数就能AC。  </p>
+<a id="more"></a>
+
+<p>观察题目，你可以直接得出以下结论：<br>$$ f91(n)=\left{<br>\begin{aligned}<br>&amp;f91(f91(n+11))&amp;(n\leqslant 100) \<br>&amp;n-10&amp;(n\geqslant 101) \<br>\end{aligned}<br>\right.<br>$$  </p>
+<p>题面要求的输出比较麻烦，所以我使用<code>printf</code>。同时，如果这个数输入的时候就已经是 $n-10$ 了，那么我就直接输出 $n-10$ 就好了。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ll<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span> ull<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">f91</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">f91</span><span class="token punctuation">(</span><span class="token function">f91</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> x<span class="token number">-10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>n<span class="token operator">&amp;&amp;</span>n<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//输入n后直接判断是否结束程序</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//这种比较麻烦的输出用printf比较方便</span>
+          <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"f91(%d) = %d\n"</span><span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token function">f91</span><span class="token punctuation">(</span><span class="token function">f91</span><span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//开始递归</span>
+      <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">>=</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"f91(%d) = %d\n"</span><span class="token punctuation">,</span>n<span class="token punctuation">,</span>n<span class="token number">-10</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//直接输出n-10</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>那么如果配合上<a href="https://www.luogu.com.cn/problem/solution/UVA10696" target="_blank" rel="noopener">其他大佬</a>的结论，我们可以直接把这题变成一道大水题。  </p>
+<p>$$ f91(n)=\left{<br>\begin{aligned}<br>&amp;91&amp;(n\leqslant 100) \<br>&amp;n-10&amp;(n\geqslant 101) \<br>\end{aligned}<br>\right.<br>$$<br>那就直接在主函数输出就行了，核心代码如下：  </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>n<span class="token operator">&amp;&amp;</span>n<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;=</span><span class="token number">100</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"f91(%d) = 91\n"</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">>=</span><span class="token number">101</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"f91(%d) = %d\n"</span><span class="token punctuation">,</span>n<span class="token punctuation">,</span>n<span class="token number">-10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -444,7 +489,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.magicyan.xyz/2020/09/05/zan-bie/">https://www.magicyan.xyz/2020/09/05/zan-bie/</a>
+                    <a href="https://www.magicyan.xyz/2021/07/04/uva10696-f91-ti-jie/">https://www.magicyan.xyz/2021/07/04/uva10696-f91-ti-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -481,7 +526,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/UVA/">
+                                    <span class="chip bg-color">UVA</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -524,7 +573,7 @@
         repo: 'blogtalk',
         owner: '2740365712',
         admin: 2740365712,
-        id: '2020-09-05T21-09-07',
+        id: '2021-07-04T10-41-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -550,9 +599,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/07/04/uva10696-f91-ti-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="UVA10696 f91 题解">
+                        
+                        <span class="card-title">UVA10696 f91 题解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            看到洛谷题解上的大佬找出了这个函数的规律，不过我做这道题的时候并没有想那么多。这题直接按题意写递归函数就能AC。  
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/OI/" class="post-category">
+                                    OI
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/UVA/">
+                        <span class="chip bg-color">UVA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/10/02/luo-gu-p1983-che-zhan-fen-ji-ti-jie/">
                     <div class="card-image">
@@ -570,9 +670,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -592,47 +692,6 @@
                         <span class="chip bg-color">暴力</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/08/29/luo-gu-p1351-lian-he-quan-zhi-ti-jie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="洛谷P1351-联合权值题解">
-                        
-                        <span class="card-title">洛谷P1351-联合权值题解</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            这是一个本题的奇葩解法。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-29
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/OI/" class="post-category">
-                                    OI
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
@@ -798,6 +857,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 

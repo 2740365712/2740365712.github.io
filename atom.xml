@@ -6,7 +6,7 @@
   <link href="https://www.magicyan.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.magicyan.xyz/"/>
-  <updated>2020-10-02T00:20:26.910Z</updated>
+  <updated>2021-07-04T02:44:52.569Z</updated>
   <id>https://www.magicyan.xyz/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UVA10696 f91 题解</title>
+    <link href="https://www.magicyan.xyz/2021/07/04/uva10696-f91-ti-jie/"/>
+    <id>https://www.magicyan.xyz/2021/07/04/uva10696-f91-ti-jie/</id>
+    <published>2021-07-04T02:41:09.000Z</published>
+    <updated>2021-07-04T02:44:52.569Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;看到&lt;a href=&quot;https://www.luogu.com.cn/problem/solution/UVA10696&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;洛谷题解上的大佬&lt;/a&gt;找出了这个函数的规律，不过我做这道题的时候并没有想那么多。这题直接按题意写递归函数就能AC。  &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="OI" scheme="https://www.magicyan.xyz/categories/OI/"/>
+    
+    
+    <category term="UVA" scheme="https://www.magicyan.xyz/tags/UVA/"/>
+    
+  </entry>
   
   <entry>
     <title>洛谷P1983-车站分级 题解</title>
