@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Cloudflare移动网络优化</title>
+      <link href="2021/07/05/cloudflare-yi-dong-wang-luo-you-hua/"/>
+      <url>2021/07/05/cloudflare-yi-dong-wang-luo-you-hua/</url>
+      
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Cloudflare是一家美国的CDN企业，其Free Plan很受欢迎。但由于成本等因素，CF并未对中国境内进行路由优化，默认节点三网一般解析到了LAX、SJC等，速度一般。目前有站长通过第三方A记录接入的方式实现自选ip，优化网站速度。写这篇博客的原因是我今天偶然发现104.16段香港节点在晚上速度远没有白天理想。</p><h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p><code>测试位置：中国，广东    </code></p><p><code>测试宽带提供商：中国移动  </code><br>对于移动线路来说，比较好的cf节点位置为中国香港（HKG）和德国法兰克福（FRA）。  </p><h4 id="香港"><a href="#香港" class="headerlink" title="香港"></a>香港</h4><p>香港的ip段有：  </p><pre><code>104.16.x.x104.17.x.x141.101.115.x104.19.x.x</code></pre><p>其中前面三个都是走CMI线路，延迟较高，白天速度不错，但晚上速度很一般<br>104.19段白天走的是hkix，晚上又走CMI了（这个是今晚测试的时候发现的，不排除是CF今天调了路由），延迟低（只有几十ms），速度全天不错<br>我还是比较建议104.19段，然后也可以用104.16段<br><img src="https://z3.ax1x.com/2021/07/05/R5vYmF.png" alt="HKG-104.16-trace.png"><br><img src="https://z3.ax1x.com/2021/07/05/R5xZ1x.png" alt="HKG-104.19(CMI)-trace"><br><img src="https://z3.ax1x.com/2021/07/05/R5v8yT.png" alt="HKG-141.101.115.1-trace.png"></p><h4 id="法兰克福"><a href="#法兰克福" class="headerlink" title="法兰克福"></a>法兰克福</h4><p>法兰克福的ip段是<code>162.159.160.x</code>，速度快，丢包基本为0，缺点是延迟较高。<br><img src="https://z3.ax1x.com/2021/07/05/R5vGOU.png" alt="FRA trace"></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Cloudflare移动方面建议使用104.19段和162.159.160.x，104.16段酌情选择。<br>最后，由于各种原因，本文并不一定能代表全国各地的情况，但仍具有一定的指导意义。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Cloudflare </tag>
+            
+            <tag> CDN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>UVA10696 f91 题解</title>
       <link href="2021/07/04/uva10696-f91-ti-jie/"/>
       <url>2021/07/04/uva10696-f91-ti-jie/</url>
