@@ -6,7 +6,7 @@
   <link href="https://www.magicyan.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.magicyan.xyz/"/>
-  <updated>2021-07-05T14:03:01.555Z</updated>
+  <updated>2021-07-10T01:41:17.531Z</updated>
   <id>https://www.magicyan.xyz/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>GJCDN灵车复活</title>
+    <link href="https://www.magicyan.xyz/2021/07/10/gjcdn-ling-che-fu-huo/"/>
+    <id>https://www.magicyan.xyz/2021/07/10/gjcdn-ling-che-fu-huo/</id>
+    <published>2021-07-10T01:25:11.458Z</published>
+    <updated>2021-07-10T01:41:17.531Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;GJCDN（CatCDN）升级完成，命名为FBICDN，具有抗伪墙攻击功能，快来薅羊毛！&lt;br&gt;线路是Cera的CUVIP线路，速度中上，最低仅需0.1元/月。原GJCDN、CatCDN老用户用原账号登录还能得到50元余额奖励！&lt;br&gt;个人感觉优点如下： </summary>
+        
+      
+    
+    
+    
+    <category term="网络" scheme="https://www.magicyan.xyz/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="CDN - 免费CDN - 海外CDN - FBICDN" scheme="https://www.magicyan.xyz/tags/CDN-%E5%85%8D%E8%B4%B9CDN-%E6%B5%B7%E5%A4%96CDN-FBICDN/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cloudflare移动网络优化</title>
     <link href="https://www.magicyan.xyz/2021/07/05/cloudflare-yi-dong-wang-luo-you-hua/"/>
     <id>https://www.magicyan.xyz/2021/07/05/cloudflare-yi-dong-wang-luo-you-hua/</id>
     <published>2021-07-05T12:57:34.000Z</published>
-    <updated>2021-07-05T14:03:01.555Z</updated>
+    <updated>2021-07-10T01:27:37.438Z</updated>
     
     
       
@@ -40,6 +65,10 @@
     <category term="Cloudflare" scheme="https://www.magicyan.xyz/tags/Cloudflare/"/>
     
     <category term="CDN" scheme="https://www.magicyan.xyz/tags/CDN/"/>
+    
+    <category term="免费CDN" scheme="https://www.magicyan.xyz/tags/%E5%85%8D%E8%B4%B9CDN/"/>
+    
+    <category term="海外CDN" scheme="https://www.magicyan.xyz/tags/%E6%B5%B7%E5%A4%96CDN/"/>
     
   </entry>
   

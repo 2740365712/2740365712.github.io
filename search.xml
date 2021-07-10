@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>GJCDN灵车复活</title>
+      <link href="2021/07/10/gjcdn-ling-che-fu-huo/"/>
+      <url>2021/07/10/gjcdn-ling-che-fu-huo/</url>
+      
+        <content type="html"><![CDATA[<p>GJCDN（CatCDN）升级完成，命名为FBICDN，具有抗伪墙攻击功能，快来薅羊毛！<br>线路是Cera的CUVIP线路，速度中上，最低仅需0.1元/月。原GJCDN、CatCDN老用户用原账号登录还能得到50元余额奖励！<br>个人感觉优点如下：  </p><ol><li>免费</li><li>支持HTTPS，支持TLS1.3，TLS证书由自己上传</li><li>伪墙清洗、防CC、防DDOS</li><li>CUVIP线路速度尚可  </li><li>页面规则设置简单  </li><li>支持freenom系免费域名  </li></ol><p>个人感觉不足如下：  </p><ol><li>感觉线路没有移动到Cloudflare的hkg节点好  </li><li>0.1元的套餐只支持1个域名接入，想低价接入更多域名需要注册更多账号    </li></ol><p>最后，本站已经在境内线路使用FBICDN。<br>FBICDN官网地址：<a href="https://www.fbicdn.com/" target="_blank" rel="noopener">https://www.fbicdn.com</a><br><del>若有机会，本文内容会完善</del></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CDN - 免费CDN - 海外CDN - FBICDN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cloudflare移动网络优化</title>
       <link href="2021/07/05/cloudflare-yi-dong-wang-luo-you-hua/"/>
       <url>2021/07/05/cloudflare-yi-dong-wang-luo-you-hua/</url>
@@ -23,6 +48,10 @@
             <tag> Cloudflare </tag>
             
             <tag> CDN </tag>
+            
+            <tag> 免费CDN </tag>
+            
+            <tag> 海外CDN </tag>
             
         </tags>
       

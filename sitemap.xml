@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.magicyan.xyz/2021/07/10/gjcdn-ling-che-fu-huo/</loc>
+    
+    <lastmod>2021-07-10</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.magicyan.xyz/2021/07/05/cloudflare-yi-dong-wang-luo-you-hua/</loc>
     
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     
   </url>
   
@@ -81,7 +88,7 @@
 
   <url>
     <loc>https://www.magicyan.xyz/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -89,42 +96,63 @@
   
   <url>
     <loc>https://www.magicyan.xyz/tags/Codeforces/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.magicyan.xyz/tags/UVA/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.magicyan.xyz/tags/%E6%9A%B4%E5%8A%9B/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.magicyan.xyz/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.magicyan.xyz/tags/Cloudflare/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.magicyan.xyz/tags/CDN/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.magicyan.xyz/tags/CDN-%E5%85%8D%E8%B4%B9CDN-%E6%B5%B7%E5%A4%96CDN-FBICDN/</loc>
+    <lastmod>2021-07-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.magicyan.xyz/tags/%E5%85%8D%E8%B4%B9CDN/</loc>
+    <lastmod>2021-07-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.magicyan.xyz/tags/%E6%B5%B7%E5%A4%96CDN/</loc>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -133,14 +161,14 @@
   
   <url>
     <loc>https://www.magicyan.xyz/categories/OI/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.magicyan.xyz/categories/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2021-07-05</lastmod>
+    <lastmod>2021-07-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
