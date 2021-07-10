@@ -6,7 +6,7 @@
   <link href="https://www.magicyan.xyz/atom.xml" rel="self"/>
   
   <link href="https://www.magicyan.xyz/"/>
-  <updated>2021-07-10T01:41:17.531Z</updated>
+  <updated>2021-07-10T01:48:02.312Z</updated>
   <id>https://www.magicyan.xyz/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>GJCDN灵车复活</title>
     <link href="https://www.magicyan.xyz/2021/07/10/gjcdn-ling-che-fu-huo/"/>
     <id>https://www.magicyan.xyz/2021/07/10/gjcdn-ling-che-fu-huo/</id>
-    <published>2021-07-10T01:25:11.458Z</published>
-    <updated>2021-07-10T01:41:17.531Z</updated>
+    <published>2021-07-09T22:45:34.000Z</published>
+    <updated>2021-07-10T01:48:02.312Z</updated>
     
     
       
@@ -37,7 +37,13 @@
     <category term="网络" scheme="https://www.magicyan.xyz/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-    <category term="CDN - 免费CDN - 海外CDN - FBICDN" scheme="https://www.magicyan.xyz/tags/CDN-%E5%85%8D%E8%B4%B9CDN-%E6%B5%B7%E5%A4%96CDN-FBICDN/"/>
+    <category term="CDN" scheme="https://www.magicyan.xyz/tags/CDN/"/>
+    
+    <category term="免费CDN" scheme="https://www.magicyan.xyz/tags/%E5%85%8D%E8%B4%B9CDN/"/>
+    
+    <category term="海外CDN" scheme="https://www.magicyan.xyz/tags/%E6%B5%B7%E5%A4%96CDN/"/>
+    
+    <category term="FBICDN" scheme="https://www.magicyan.xyz/tags/FBICDN/"/>
     
   </entry>
   
