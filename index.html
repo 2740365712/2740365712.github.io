@@ -78,10 +78,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-洛谷P1983-车站分级_题解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-回归" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/03/05/%E6%B4%9B%E8%B0%B7P1983-%E8%BD%A6%E7%AB%99%E5%88%86%E7%BA%A7_%E9%A2%98%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2022-03-04T21:25:25.000Z" itemprop="datePublished">2022-03-05</time>
+    <a href="/2022/03/05/%E5%9B%9E%E5%BD%92/" class="article-date">
+  <time class="dt-published" datetime="2022-03-05T01:12:30.000Z" itemprop="datePublished">2022-03-05</time>
 </a>
     
   </div>
@@ -92,7 +92,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/05/%E6%B4%9B%E8%B0%B7P1983-%E8%BD%A6%E7%AB%99%E5%88%86%E7%BA%A7_%E9%A2%98%E8%A7%A3/">洛谷P1983-车站分级 题解</a>
+      <a class="p-name article-title" href="/2022/03/05/%E5%9B%9E%E5%BD%92/">回归</a>
     </h1>
   
 
@@ -100,108 +100,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>题目链接：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1983">https://www.luogu.com.cn/problem/P1983</a><br>思路来源：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/WT666-666/solution-p1983">https://www.luogu.com.cn/blog/WT666-666/solution-p1983</a><br>虽然这位dalao的题解里留了不少坑（幸好我没抄），但是他的思路给了我很大启发。</p>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>在完成输入后，我们可以掌握某辆车停靠和不停靠的车站。由于车站最低级别为1，所以说要把初始级别设为1，这样之后我们算出来车站的最高级别就会是车站分出来的级别。</p>
-<p>那么怎么来推算每个车站的级别呢？<br>假设停靠的站点为1，不停靠的站点为0，当一辆车的情况是这样的时候：<code>1 0 0 0 1</code> 那么外面两个车站的等级显然是高于中间三个的，否则的话就全都要停靠了。<br>所以说我们就可以从不停靠的车站入手，将停靠的车站的等级改为不停靠的车站的最高等级+1，使其符合条件。  </p>
-<p>现在你可以先试着自己写下代码了，如果有问题再往下看。</p>
-<h3 id="代码（含注释）"><a href="#代码（含注释）" class="headerlink" title="代码（含注释）"></a>代码（含注释）</h3><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> lv<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">,</span>tot<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">,</span>train<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">,</span>stop<span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1005</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//车站的级别 某一辆车停靠的站点数 某辆车的某个站点的编号 某辆车是否停靠某个站点</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token operator">&amp;</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> lv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//每个车站的最低等级为1</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">int</span> s<span class="token punctuation">;</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        tot<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>s<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>s<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            stop<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">bool</span> finish<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>finish<span class="token operator">==</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token comment">//cout&lt;&lt;"ok"&lt;&lt;endl;</span>
-        finish<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-            <span class="token comment">//cout&lt;&lt;"ok2"&lt;&lt;endl;</span>
-            <span class="token keyword">int</span> _max<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>tot<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-                <span class="token comment">//cout&lt;&lt;"ok3"&lt;&lt;endl;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>stop<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> _max<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>_max<span class="token punctuation">,</span>lv<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//找出不停靠的车站的最大级别</span>
-            <span class="token punctuation">&#125;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>tot<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//题目中提到：如果这趟车次停靠了火车站x，</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>lv<span class="token punctuation">[</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span>_max<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//则始发站、终点站之间所有级别大于等于火车站x的都必须停靠。</span>
-                    lv<span class="token punctuation">[</span>train<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span>_max<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>finish<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span><span class="token comment">//所以反过来，如果某个站停靠了，那么它至少也要比没停靠的站中的最大值大。</span>
-                    <span class="token comment">//cout&lt;&lt;"lv changed"&lt;&lt;" "&lt;&lt;_max&lt;&lt;endl;</span>
-                <span class="token punctuation">&#125;</span><span class="token comment">//当有一个站被修改了 就证明这个过程没完成</span>
-            <span class="token punctuation">&#125;</span>
-            _max<span class="token operator">+=</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">int</span> _max<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-\<span class="token function">tfor</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> _max<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>_max<span class="token punctuation">,</span>lv<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-\<span class="token function">tprintf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>_max<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <p>前一段时间我的<code>.top</code>域名到期，换用了免费域名<code>changyang.ml</code>和<code>xingye.tk</code>。其中<code>xingye.tk</code>使用了Euserv的免费vps，虽然不知道能用到啥时候，但总归是正常运转。而这个域名对应的技术博客则由于我本地<code>hexo</code>环境出了点莫名其妙的问题关站了，现在使用clog这一在线hexo平台重新维持本站运转。<br>另外，本站原本的一些题解不会再迁移，以后本站可能更多聊聊技术上的东西。我OI阶段写的题解都有同步在<a target="_blank" rel="noopener" href="http://oi.changyang.ml/">http://oi.changyang.ml</a>，是基于github pages+Gridea的博客，但以后基本不会再更新。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.changyang.ml/2022/03/05/%E6%B4%9B%E8%B0%B7P1983-%E8%BD%A6%E7%AB%99%E5%88%86%E7%BA%A7_%E9%A2%98%E8%A7%A3/" data-id="cl0d4uz2400016xiq04vua2fg" data-title="洛谷P1983-车站分级 题解" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/01/20/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-01-20T01:38:58.975Z" itemprop="datePublished">2022-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/01/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.changyang.ml/2022/01/20/hello-world/" data-id="cl0d4uz1z00006xiqhb5z9idd" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://www.changyang.ml/2022/03/05/%E5%9B%9E%E5%BD%92/" data-id="cl0d5iuss00007liq4dde1kxn" data-title="回归" class="article-share-link">分享</a>
       
       
       
@@ -231,7 +135,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li></ul>
     </div>
   </div>
 
@@ -244,11 +148,7 @@
       <ul>
         
           <li>
-            <a href="/2022/03/05/%E6%B4%9B%E8%B0%B7P1983-%E8%BD%A6%E7%AB%99%E5%88%86%E7%BA%A7_%E9%A2%98%E8%A7%A3/">洛谷P1983-车站分级 题解</a>
-          </li>
-        
-          <li>
-            <a href="/2022/01/20/hello-world/">Hello World</a>
+            <a href="/2022/03/05/%E5%9B%9E%E5%BD%92/">回归</a>
           </li>
         
       </ul>
