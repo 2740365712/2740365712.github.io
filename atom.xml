@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>梦里徜徉</title>
+  
+  <subtitle>梦里徜徉的小站</subtitle>
+  <link href="http://www.changyang.ml/atom.xml" rel="self"/>
+  
+  <link href="http://www.changyang.ml/"/>
+  <updated>2022-03-05T01:12:30.386Z</updated>
+  <id>http://www.changyang.ml/</id>
+  
+  <author>
+    <name>梦里徜徉Fantasy</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回归</title>
+    <link href="http://www.changyang.ml/2022/03/05/%E5%9B%9E%E5%BD%92/"/>
+    <id>http://www.changyang.ml/2022/03/05/%E5%9B%9E%E5%BD%92/</id>
+    <published>2022-03-05T01:12:30.000Z</published>
+    <updated>2022-03-05T01:12:30.386Z</updated>
+    
+    <content type="html"><![CDATA[<p>前一段时间我的<code>.top</code>域名到期，换用了免费域名<code>changyang.ml</code>和<code>xingye.tk</code>。其中<code>xingye.tk</code>使用了Euserv的免费vps，虽然不知道能用到啥时候，但总归是正常运转。而这个域名对应的技术博客则由于我本地<code>hexo</code>环境出了点莫名其妙的问题关站了，现在使用clog这一在线hexo平台重新维持本站运转。<br>另外，本站原本的一些题解不会再迁移，以后本站可能更多聊聊技术上的东西。我OI阶段写的题解都有同步在<a href="http://oi.changyang.ml/">http://oi.changyang.ml</a>，是基于github pages+Gridea的博客，但以后基本不会再更新。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;前一段时间我的&lt;code&gt;.top&lt;/code&gt;域名到期，换用了免费域名&lt;code&gt;changyang.ml&lt;/code&gt;和&lt;code&gt;xingye.tk&lt;/code&gt;。其中&lt;code&gt;xingye.tk&lt;/code&gt;使用了Euserv的免费vps，虽然不知道能用到啥时候，</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
